@@ -21,8 +21,10 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public void addProduct(int productId) {
-        shoppingCart.add(new Product(productId));
+    public void addProduct(Set<Integer> productIds) {
+        for (Integer productId : productIds) {
+            shoppingCart.add(new Product(productId));
+        }
     }
 
     @Override

@@ -8,6 +8,6 @@ import java.util.Set;
 public interface ShoppingCartService {
     Set<Product> getProducts();
 
-    void addProduct(int products);
+    void addProduct(Set<Integer> productIds);
 
 }
