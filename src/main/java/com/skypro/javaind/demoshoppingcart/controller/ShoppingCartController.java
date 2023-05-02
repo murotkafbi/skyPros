@@ -19,8 +19,10 @@ public class ShoppingCartController {
     }
 
     @GetMapping("/add")
-    public void addProductIds(@RequestParam("productId") int productId) {
-        shoppingCartService.addProduct(productId);
+    public void addProductIds(@RequestParam("productId") Set<Integer> productIds) {
+        for (Integer productId : productIds) {
+            shoppingCartService.addProduct(productId);
+        }
     }
 
     @GetMapping("/get")
